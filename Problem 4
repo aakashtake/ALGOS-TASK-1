@@ -3,23 +3,22 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cout<< "Enter a odd no.";
-    cin>> t;
-    int i, j, n, m;
-    
+    int oddnum;
+    cout<< "Enter no. of columns";
+    cin>> oddnum;
+    int i, j, m, n;
     //Code to print required patern.
-    for (m = 0; m < t; m++)
+    for (n = 0; n < oddnum; n++)
     {
-
-        n=t;
-        for (i = 1; i <= n; i++) 
+        cout<< "Enter no. of row.";
+        cin>> m;
+        for (i = 1; i <= m; i++) 
         {
-            for (j = 1; j <= n; j++) 
+            for (j = 1; j <= m; j++) 
             {
-                if (i <= n / 2 + 1) 
+                if (i <= m / 2 + 1) 
                 {
-                    if (((j <= n / 2 + 2 - i) ) || ( (j > n / 2 + i - 1))) 
+                    if (((j <= m / 2 + 2 - i) ) || ( (j > m / 2 + i - 1))) 
                         {
                             cout<< "*";
                         }    
@@ -32,7 +31,7 @@ int main()
 
                 else 
                 {
-                    if ((j <= i - n / 2) || (  j > (3 * n) / 2 - i)) 
+                    if ((j <= i - m / 2) || (  j > (3 * m) / 2 - i)) 
                         {
                             cout<< "*";
                         }
@@ -44,7 +43,8 @@ int main()
             }
             
             cout<< "\n";
-            
+
         }
+        break;
     }
 }
