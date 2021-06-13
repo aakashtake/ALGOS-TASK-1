@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+int calculatefund(int y, int arr1[], int arr2[]);
+int checkfund(int x, int y);
+int n,r, fund, newfund, x, y;
+
+int main()
+{  
+    cout<< "Enter no. of days under consideration.";
+    cin>> n;
+    int contest[n];
+    int pizza[n];
+    cout<< "Enter the initial funds with the club.";
+    cin>> r;
+    cout<< "Enter the amount to be increased after each successful day of workshop.";
+    cin>> x;
+    cout<< "Enter the amount to be decreased after each unsuccessful day of workshop.";
+    cin>> y;
+    cout<< "Enter the details for the contest held or not during the workshop.\nInput 1 is contest was held. if not then input 0.";
+    for(int i=0; i<n; i++)
+    {
+        cin>> contest[i];
+    }
+    cout<< "Enter the details for the whether pizza was eaten or not.\nIf eaten input 1 else input 0.";
+    for(int j=0; j<n; j++)
+    {
+        cin>> pizza[j];
+    }
+    fund= calculatefund(r, contest, pizza);
+    checkfund(fund, r);
+    return 0;
+}
+//Function to check fund.
+int calculatefund(int y,int arr1[], int arr2[])
+{
+    newfund= y;
+    for(int i=0; i<n; i++)
+    {
+        if(arr1[i]==1)
+        {
+            if(arr2[i]==1)
+            {
+                newfund= newfund + x;
+            }
+            else
+            {
+                newfund= newfund - y;
+            }
+            
+        }
+        else
+        {
+            
+        }
+    }
+    return newfund;
+}
+//Function to check promotion or demotion
+int checkfund(int x, int y)
+{
+    if(x > y)
+    {
+        cout<< "PROMOTED";
+    }
+    else if (x<y)
+    {
+        cout<< "DEMOTED";
+    }
+    else
+    {
+        cout<<"Neither Promoted nor Demoted";
+    }
+    return 0;
+}
