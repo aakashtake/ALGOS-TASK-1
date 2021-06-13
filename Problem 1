@@ -10,11 +10,13 @@ int main()
     string mystring;
     cin >> mystring;
     //Exception case 
+    
     if (n <= 2) 
     {
         cout << "-1";
     }
     //Main code
+    
     else
     {
 
